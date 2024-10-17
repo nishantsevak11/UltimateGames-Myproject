@@ -2,19 +2,12 @@
     "version": 2,
     "builds": [
       {
-        "src": "server.js",
+        "src": "game-proxy/server.js", 
         "use": "@vercel/node"
-      },
-      {
-        "src": "public/**/*",
-        "use": "@vercel/static"
       }
     ],
     "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/server.js"
-      }
+      { "src": "/api/(.*)", "dest": "game-proxy/server.js" }
     ]
   }
   

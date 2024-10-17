@@ -8,7 +8,6 @@ app.use(cors());
 // Proxy endpoint for games and game details
 app.get('/api/games', async (req, res) => {
   try {
-    // Create the FreeToGame API URL with any query parameters provided by the frontend
     const apiUrl = `https://www.freetogame.com/api/games${req._parsedUrl.search || ''}`;
     const response = await fetch(apiUrl);
     const data = await response.json();
@@ -55,7 +54,11 @@ app.get('/api/games/category', async (req, res) => {
   }
 });
 
-const PORT = 3000;
+// Export the app for Vercel
+export default app;
+
+// Start the server (useful for local development)
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
