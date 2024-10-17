@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary-color: #3A28A0;
+    --secondary-color: #1C140F;
+    --white-color: white;
+}
+
+html{
+    font-size: 20px;
+}
+
+body {
+    
+    color: var(--white-color);
+    font-family: "Poppins", sans-serif;
+    background-color: var(--primary-color);
+}
+
+/* ? Navbar Start */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2%;
+}
+
+.navigation-feature {
+    width: 50%;
+    justify-content: end;
+    align-items: center;
+}
+
+.navigation-feature ul {
+    list-style-type: none;
+
+}
+
+.navigation-feature ul li {
+    margin: 0 10%;
+    cursor: pointer;
+}
+
+
+.search-container {
+    width: 30%;
+    margin: 0 10%;
+    padding: 10px 40px 10px 20px;
+    background-color: var(--secondary-color);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    gap: 3%;
+    align-items: center;
+}
+
+.search-input {
+    width: 100%;
+    border: none;
+    background-color: var(--secondary-color);
+    color: #fff;
+    /* White text color */
+    font-size: 1rem;
+    /* Adjust font size as needed */
+    outline: none;
+
+}
+
+.search-input::placeholder {
+    color: #aaa;
+    /* Light gray for placeholder text */
+}
+
+.search-icon {
+    color: var(--white-color);
+    font-size: 1rem;
+}
+
+
+@media (max-width:1000px) {
+    .navigation-feature{
+        justify-content: start;
+    }
+    .search-container{
+        width: 50%;
+    }
+}
+
+
+/* ? Hero Section */
+
+.hero-section{
+    justify-content: space-between;
+}
+
+.hero-text{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3%;
+    padding: 0 5%;
+}
+.hero-text h1{
+    font-size: 2rem;
+}
+.hero-text p{
+    font-size: 0.8rem;
+}
+
+.hero-image{
+    padding: 0 5%;
+    width: 50%;
+    max-width: 50%;
+}
+.hero-image img{
+   width: 100%;
+   object-fit: contain;
+}
+
+@media (max-width:1200px) {
+
+    html{
+       font-size: 18px;
+    }
+    
+}
+
+@media (max-width:850px) {
+    
+    html{
+        font-size: 12px;
+    }
+
+    .hero-section{
+        
+    }
+}
+@media (max-width:600px) {
+    html{
+        font-size: 10px;
+    }
+    .hero-image{
+        padding-left: 0;
+    }
+
+    /* .hero-section{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .hero-text{
+        width: 80%;
+    }
+    .hero-image{
+        width: 100%;
+        padding: 0;
+        margin: 5% 0;
+    } */
+
+}
+
+
+/*? Top pc Games */
+
+.games-container{
+    display: flex;
+    /* flex-wrap: wrap; */
+    overflow-x: auto;
+    gap: 2%;
+}
+
+.games-head{
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5% 0;
+}
+
+.games-head h2{
+    font-size: 1.7rem;
+}
+
+.games-container h3{
+    font-size: 1.2rem;
+}
+
+.game img{
+    width: 100%;
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+/* ?Categories1 */
+
+.categories-container1{
+    display: flex;
+    background-color: var(--secondary-color);
+    padding: 5%;
+}
+
+.image-container{
+    width: 50%;
+}
+.image-container img{
+    width: 100%;
+    object-fit: contain;
+    padding: 5% 3% 0% 3%;
+}
+.text-container{
+    width: 50%;
+    padding: 3%;
+    text-align: start;
+}
+.text-container h3{
+    font-size: 2.5rem;
+}
+.text-container p{
+    font-size: 1rem;
+}
+
+@media (max-width:1000px) {
+    .text-container h3{
+        font-size: 1.5rem;
+    }
+    .text-container p{
+        font-size: 0.8rem;
+    }
+    .game img{
+        border-radius: 10px;
+    }
+
+}
+@media (max-width:500px) {
+    .text-container h3{
+        font-size: 1rem;
+    }
+    .text-container p{
+        font-size: 0.5rem;
+    }
+ 
+}
+
+/* ?Categories2 */
+
+.categories-container2{
+    display: flex;
+    flex-direction: column;
+}
+
+.text-container2{
+    width: 60%;
+    margin: 2% auto;
+}
+
+.text-container2 h3{
+    font-size: 2.5rem;
+}
+.text-container2 p{
+    font-size: 1rem;
+    /* width: 60%; */
+}
+
+.image-container2{
+    width: 60vw;
+    margin: auto;
+}
+.image-container2 img{
+    width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width:1000px) {
+    .text-container2 h3{
+        font-size: 1.5rem;
+    }
+    .text-container2 p{
+        font-size: 0.8rem;
+    }
+}
+@media (max-width:500px) {
+    .text-container h3{
+        font-size: 1rem;
+    }
+    .text-container p{
+        font-size: 0.5rem;
+    }
+}
+
+/* ?All Categories */
+
+
+footer{
+    text-align: center;
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 30vh;
+}
+
+ @media (min-width:2500px) {
+    html{
+        font-size: 30px;
+    }
+} 
+
+
+.all-categories {
+    text-align: center;
+    padding: 40px;
+}
+
+.all-categories h4 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.all-categories p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #c1bfff;
+}
+
+.all-categories-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin:auto;
+    padding: 2%;
+    width: 60%;
+}
+
+
+.all-categories-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .all-categories-images {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .all-categories-images{
+        width:100%;
+    }
+
+    .all-categories h4 {
+        font-size: 1.5rem;
+    }
+
+    .all-categories p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+.button {
+    padding: 1% 3%;
+    background-color: #624bdf;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5439bf;
+}
+
+
+
+@media (max-width:700px) {
+    html{
+        font-size: 10px;
+    }
+}
+
+@media (max-width:550px) {
+    html{
+        font-size: 8px;
+    }
+}
+@media (max-width:450px) {
+    html{
+        font-size: 6px;
+    }
+}

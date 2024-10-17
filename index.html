@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Games</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="util.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <nav>
+        <div class="logo">
+            <h1>Ultimate Games</h1>
+        </div>
+        <div class="navigation-feature flex">
+            <ul class="flex">
+                <li onclick="navigatePage('index.html')">Home</li>
+                <li onclick="navigatePage('categories.html')">Categories</li>
+            </ul>
+            <div class="search-container flex">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Search" class="search-input">
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Section Start -->
+    <header class="p-2">
+        <div class="hero-section flex">
+            <div class="hero-text">
+                <h1>Discover <span>Ultimate</span><br>
+                    Free Games
+                </h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit quas autem aperiam earum consectetur
+                    obcaecati non, odit ullam expedita recusandae tempora quod odio voluptas nesciunt iusto ratione unde
+                    quibusdam laborum?</p>
+                <button class="button">Get more details</button>
+            </div>
+            <div class="hero-image">
+                <img src="images/heroPoster.png" alt="Hero Image">
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section End -->
+
+    <main>
+        <div class="top-games p-2">
+            <div class="games-head">
+                <h2>Top PC Games</h2>
+                <button id="pc-games-show-all" value="pc" class="button" onclick="showAll(this.value)">Show all</button>
+            </div>
+            <div id="top-pc-games-container" class="top-pc-games games-container"></div>
+        </div>
+
+        <div class="top-games p-2">
+            <div class="games-head">
+                <h2>Top Browser Games</h2>
+                <button id="browser-games-show-all" value="browser" class="button" onclick="showAll(this.value)">Show all</button>
+            </div>
+            <div id="top-browser-games-container" class="top-browser-games games-container"></div>
+        </div>
+
+        <div class="top-games p-2">
+            <div class="games-head">
+                <h2>Action Games</h2>
+                <button id="action-games-show-all" value="action" class="button" onclick="showAll(this.value)">Show all</button>
+            </div>
+            <div id="top-action-games" class="games-container"></div>
+        </div>
+
+        <div class="top-games p-2">
+            <div class="games-head">
+                <h2>Racing Games</h2>
+                <button id="racing-games-show-all" value="racing" class="button" onclick="showAll(this.value)">Show all</button>
+            </div>
+            <div id="top-racing-games" class="games-container"></div>
+        </div>
+
+        <div class="top-games p-2">
+            <div class="games-head">
+                <h2>Shooter Games</h2>
+                <button id="shooter-games-show-all" value="shooter" class="button" onclick="showAll(this.value)">Show all</button>
+            </div>
+            <div id="top-shooter-games" class="games-container"></div>
+        </div>
+
+        <div class="top-games p-2">
+            <div class="games-head">
+                <h2>Zombie Games</h2>
+                <button id="zombie-games-show-all" value="zombie" class="button" onclick="showAll(this.value)">Show all</button>
+            </div>
+            <div id="top-zombie-games" class="games-container"></div>
+        </div>
+
+        <!-- All categories -->
+        <div class="all-categories">
+            <h4>All categories</h4>
+            <div class="all-categories-images">
+                <img id="photo1" src="https://www.freetogame.com/g/306/thumbnail.jpg" alt="">
+                <img id="photo2" src="https://www.freetogame.com/g/265/thumbnail.jpg" alt="">
+                <img id="photo3" src="https://www.freetogame.com/g/386/thumbnail.jpg" alt="">
+                <img id="photo4" src="https://www.freetogame.com/g/89/thumbnail.jpg" alt="">
+                <img id="photo5" src="https://www.freetogame.com/g/426/thumbnail.jpg" alt="">
+                <img id="photo6" src="https://www.freetogame.com/g/527/thumbnail.jpg" alt="">
+            </div>
+            <button class="button">SEE ALL</button>
+        </div>
+
+    </main>
+
+    <footer>
+        THIS IS FOOTER
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
