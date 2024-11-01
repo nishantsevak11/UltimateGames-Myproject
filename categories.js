@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3000/api/games/category?category=";
+const baseUrl = "https://ultimategames-server-code.onrender.com/api/games/category?category=";
 
 let currentPage = 1; // To keep track of the current page of games
 let isLoading = false; // To prevent multiple simultaneous loads

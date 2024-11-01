@@ -1,5 +1,5 @@
-const baseUrl = 'http://localhost:3000/api/games';
-const gameDetailUrl = 'http://localhost:3000/api/game?id=';
+const baseUrl = 'https://ultimategames-server-code.onrender.com/api/games';
+const gameDetailUrl = 'https://ultimategames-server-code.onrender.com/api/game?id=';
 
 let currentPage = 1; // Track current page for loading more games
 let isLoading = false; // Prevent multiple simultaneous loads

@@ -1,4 +1,5 @@
-const baseUrl = 'http://localhost:3000/api/games';
+// const baseUrl = 'http://localhost:3000/api/games';
+const baseUrl = "https://ultimategames-server-code.onrender.com/api/games";
 
 function navigatePage(id) {
     // Store the game ID in localStorage and navigate to the game page

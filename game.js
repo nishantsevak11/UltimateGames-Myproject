@@ -1,4 +1,4 @@
-const gameDetailUrl = 'http://localhost:3000/api/game?id=';
+const gameDetailUrl = 'https://ultimategames-server-code.onrender.com/api/game?id=';
 
 // Retrieve the game ID from local storage
 let id = localStorage.getItem('id');
