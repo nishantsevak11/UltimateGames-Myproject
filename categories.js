@@ -1,7 +1,11 @@
+// Default category to load when the page loads and no category is selected
+const DEFAULT_CATEGORY = "MMORPG"; 
+
 const baseUrl = "https://ultimategames-server-code.onrender.com/api/games/category?category=";
 
-let currentPage = 1; // To keep track of the current page of games
-let isLoading = false; // To prevent multiple simultaneous loads
+let currentPage = 1; // Track the current page of games
+let isLoading = false; // Prevent multiple simultaneous loads
+let selectedCategoryElement = null; // Track the currently selected category element
 
 // Function to navigate to the game page
 function navigatePage(id) {
@@ -19,8 +23,13 @@ function displayNoGamesMessage() {
     document.querySelector(".games-container").innerHTML = "<p>No games found.</p>";
 }
 
-// Load and display games for a selected category
-async function loadGames(category, page = 1) {
+// Load and display games for a selected category, and highlight selected category
+async function loadGames(category, element = null, page = 1) {
+    // Highlight selected category if an element is provided
+    if (element) {
+        highlightSelectedCategory(element);
+    }
+
     localStorage.setItem('selectedCategory', category); // Store selected category
     const data = await fetchGames(category, page); // Fetch games based on category and page
 
@@ -35,6 +44,18 @@ async function loadGames(category, page = 1) {
     } else if (page === 1) {
         displayNoGamesMessage(); // Handle no games case
     }
+}
+
+// Function to highlight selected category
+function highlightSelectedCategory(element) {
+    // Remove the previous selection highlight if it exists
+    if (selectedCategoryElement) {
+        selectedCategoryElement.classList.remove("selected-category");
+    }
+
+    // Highlight the newly selected category
+    element.classList.add("selected-category");
+    selectedCategoryElement = element; // Update the selected element reference
 }
 
 // Fetch games based on category and page
@@ -53,7 +74,7 @@ async function fetchGames(category, page) {
 function displayElement(data) {
     const game = document.createElement("div");
     game.className = "game-item";
-    game.id = data.id; // Assigning game ID to the div's id
+    game.id = data.id; // Assign game ID to the div's id
 
     const title = document.createElement("h3");
     title.innerText = data.title;
@@ -76,10 +97,13 @@ function displayElement(data) {
 
 // Load games based on selected category when page loads
 async function libraryLoad() {
-    const category = localStorage.getItem('selectedCategory'); // Retrieve selected category
-    if (category) {
-        await loadGames(category, currentPage); // Load games for saved category
+    let category = localStorage.getItem('selectedCategory'); // Retrieve selected category
+    if (!category) {
+        category = DEFAULT_CATEGORY; // Set to default if no category is selected
     }
+    
+    // Load games for saved or default category
+    await loadGames(category, document.querySelector(`li[onclick="loadGames('${category}', this)"]`));
 }
 
 // Function to handle scrolling
@@ -91,7 +115,7 @@ function handleScroll() {
         isLoading = true; // Set loading to true to prevent multiple calls
         currentPage++; // Increment page number
         const category = localStorage.getItem('selectedCategory'); // Retrieve selected category
-        loadGames(category, currentPage).finally(() => {
+        loadGames(category, selectedCategoryElement, currentPage).finally(() => {
             isLoading = false; // Reset loading status after loading games
         });
     }

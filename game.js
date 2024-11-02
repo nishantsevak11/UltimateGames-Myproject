@@ -1,5 +1,7 @@
 const gameDetailUrl = 'https://ultimategames-server-code.onrender.com/api/game?id=';
 
+
+
 // Retrieve the game ID from local storage
 let id = localStorage.getItem('id');
 localStorage.removeItem('id');
@@ -38,7 +40,11 @@ function displayElement(gameData) {
   document.getElementById('publisher').textContent = `Publisher: ${gameData.publisher}`;
   document.getElementById('developer').textContent = `Developer: ${gameData.developer}`;
   document.getElementById('release_date').textContent = `Release Date: ${gameData.release_date}`;
-
+ 
+  document.getElementById("play-now-btn").addEventListener("click", ()=>{
+    window.location.href = gameData.freetogame_profile_url;
+  })
+   
   const requirementsList = document.getElementById('requirements-list');
   const requirements = gameData.minimum_system_requirements;
 
@@ -63,3 +69,27 @@ function capitalizeFirstLetter(string) {
   return string.replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const carouselImages = document.querySelector('.carousel-images');
+  const screenshots = document.querySelectorAll('.screenshot');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let currentIndex = 0;
+  const totalImages = screenshots.length;
+
+  function showImage(index) {
+      // Update transform property to slide images
+      carouselImages.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalImages - 1;
+      showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : 0;
+      showImage(currentIndex);
+  });
+});

@@ -9,40 +9,59 @@
 </head>
 
 <body>
-    <h1 id="title">Call of Duty</h1>
-    <section class="top">
-        <div class="left">
-            <img id="image" src="" alt="">
-        </div>
-        <div class="right">
-            <h2 id="short_desc"></h2>
-            <p id="desc"></p>
-            <div class="details-2">
-                <p id="genre"></p>
-                <p id="platform"></p>
-                <p id="publisher"></p>
-                <p id="developer"></p>
-                <p id="release_date"></p>
-            </div>
-        </div>
-    </section>
+    <header>
+        <h1 id="title">Call of Duty</h1>
+    </header>
 
-    <section class="bottom">
-        <div class="system-requirements" id="system-requirements">
-            <h2>Minimum System Requirements</h2>
-            <ul id="requirements-list">
-                <!-- The requirements will be dynamically inserted here by JavaScript -->
-            </ul>
-        </div>
-
-        <div class="screenshots">
-            <button id="prevBtn"><</button>
-            <div class="ss-image">
-                <img id="" src="" alt="">
+    <main>
+        <section class="game-info">
+            <div class="game-image">
+                <img id="image" src="game_image.jpg" alt="Game Image">
             </div>
-            <button id="nextBtn">></button>
-        </div>
-    </section>
+            <div class="game-details">
+                
+                <div class="details">
+                    <p><strong>Genre:</strong> <span id="genre">Action, Shooter</span></p>
+                    <p><strong>Platform:</strong> <span id="platform">PC, Console</span></p>
+                    <p><strong>Publisher:</strong> <span id="publisher">Publisher Name</span></p>
+                    <p><strong>Developer:</strong> <span id="developer">Developer Name</span></p>
+                    <p><strong>Release Date:</strong> <span id="release_date">2023-10-15</span></p>
+                </div>
+                <button id="play-now-btn">Play Now</button>
+            </div>
+            <h2 id="short_desc">Short Description</h2>
+                <p id="desc">
+                    
+                </p>
+        </section>
+
+        <section class="game-extra">
+            <div class="system-requirements" id="system-requirements">
+                <h2>Minimum System Requirements</h2>
+                <ul id="requirements-list">
+                    <li>OS: Windows 10</li>
+                    <li>Processor: Intel i5 or equivalent</li>
+                    <li>RAM: 8 GB</li>
+                    <li>Graphics: GTX 970 or equivalent</li>
+                </ul>
+            </div>
+
+           <!-- Screenshots Carousel Section -->
+        <section class="screenshots-carousel">
+            <h2>Screenshots</h2>
+            <div class="carousel">
+                <button id="prevBtn" class="carousel-btn">❮</button>
+                <div class="carousel-images">
+                    <img src="https://www.freetogame.com/g/452/Call-of-Duty-Warzone-1.jpg" alt="Screenshot 1" class="screenshot">
+                    <img src="https://www.freetogame.com/g/452/Call-of-Duty-Warzone-2.jpg" alt="Screenshot 2" class="screenshot">
+                    <img src="https://www.freetogame.com/g/452/Call-of-Duty-Warzone-3.jpg" alt="Screenshot 3" class="screenshot">
+                    <img src="https://www.freetogame.com/g/452/Call-of-Duty-Warzone-4.jpg" alt="Screenshot 4" class="screenshot">
+                </div>
+                <button id="nextBtn" class="carousel-btn">❯</button>
+            </div>
+        </section>
+        </section>
+    </main>
 
     <script src="game.js"></script>
 </body>
